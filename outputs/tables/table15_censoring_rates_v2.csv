@@ -1,0 +1,13 @@
+code,determinand,unit,total_obs,censored_obs,censored_pct
+111,Ammoniacal Nitrogen as N,MILLIGRAM PER LITRE,325648,130701,40.14
+119,Ammonia un-ionised as N,MILLIGRAM PER LITRE,266823,98383,36.87
+118,Nitrite as N,MILLIGRAM PER LITRE,325219,50664,15.58
+180,"Orthophosphate, reactive as P",MILLIGRAM PER LITRE,322228,29301,9.09
+116,"Nitrogen, Total Oxidised as N",MILLIGRAM PER LITRE,331714,9724,2.93
+117,Nitrate as N,MILLIGRAM PER LITRE,320693,6914,2.16
+162,Alkalinity to pH 4.5 as CaCO3,MILLIGRAM PER LITRE,261175,1860,0.71
+61,pH,PH UNITS,323333,6,0.0
+76,Temperature of Water,CELSIUS,336805,0,0.0
+77,Conductivity at 25 C,MICROSIEMENS PER CENTIMETRE,285262,4,0.0
+9901,"Oxygen, Dissolved, % Saturation",PERCENTAGE,291974,4,0.0
+9924,"Oxygen, Dissolved as O2",MILLIGRAM PER LITRE,284675,4,0.0

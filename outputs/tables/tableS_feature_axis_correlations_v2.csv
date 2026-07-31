@@ -1,0 +1,13 @@
+code,unit,determinand,short,rho_umap1,rho_umap2,abs_max
+116,MILLIGRAM PER LITRE,"Nitrogen, Total Oxidised as N",Total Oxidised N,0.826,-0.288,0.826
+117,MILLIGRAM PER LITRE,Nitrate as N,Nitrate as N,0.816,-0.287,0.816
+77,MICROSIEMENS PER CENTIMETRE,Conductivity at 25 C,Conductivity,0.808,-0.178,0.808
+61,PH UNITS,pH,pH,0.228,-0.785,0.785
+118,MILLIGRAM PER LITRE,Nitrite as N,Nitrite as N,0.761,-0.003,0.761
+162,MILLIGRAM PER LITRE,Alkalinity to pH 4.5 as CaCO3,Alkalinity,0.688,-0.356,0.688
+180,MILLIGRAM PER LITRE,"Orthophosphate, reactive as P",Orthophosphate,0.653,-0.0,0.653
+9901,PERCENTAGE,"Oxygen, Dissolved, % Saturation",DO % Saturation,-0.59,-0.41,0.59
+119,MILLIGRAM PER LITRE,Ammonia un-ionised as N,Un-ionised Ammonia,0.556,-0.019,0.556
+9924,MILLIGRAM PER LITRE,"Oxygen, Dissolved as O2",DO conc. (mg/L),-0.555,-0.55,0.555
+111,MILLIGRAM PER LITRE,Ammoniacal Nitrogen as N,Ammoniacal N,0.438,0.247,0.438
+76,CELSIUS,Temperature of Water,Water Temperature,0.299,0.391,0.391

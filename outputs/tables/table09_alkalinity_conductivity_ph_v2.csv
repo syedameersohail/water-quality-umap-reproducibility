@@ -1,0 +1,7 @@
+code,determinand,short,unit,hard_water_5pct,middle90,soft_water_5pct,difference_hard_minus_soft,fold_contrast,n_obs_hard,n_obs_middle,n_obs_soft
+162,Alkalinity to pH 4.5 as CaCO3,Alkalinity,mg L-1,223.0,176.0,38.0,185.0,5.9,435,7873,406
+61,pH,pH,pH units,8.125,7.89,7.1,1.025,1.1,443,7965,441
+77,Conductivity at 25 C,Conductivity,uS cm-1,702.0,600.0,286.0,416.0,2.5,441,7897,441
+9901,"Oxygen, Dissolved, % Saturation",DO % Saturation,%,96.4,93.55,92.2,4.2,1.0,443,7968,442
+116,"Nitrogen, Total Oxidised as N",Total Oxidised N,mg L-1,7.25,3.87,1.445,5.805,5.0,443,7971,443
+76,Temperature of Water,Water Temperature,deg C,9.05,10.8,11.5,-2.45,0.8,443,7968,442

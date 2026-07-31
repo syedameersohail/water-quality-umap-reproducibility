@@ -1,0 +1,13 @@
+code,determinand,unit,focal,peer_mean,difference
+111,Ammoniacal Nitrogen as N,mg L⁻¹,0.062,0.0714,-0.0094
+116,"Nitrogen, Total Oxidised as N",mg L⁻¹,15.75,18.3,-2.55
+117,Nitrate as N,mg L⁻¹,15.7,18.24,-2.54
+118,Nitrite as N,mg L⁻¹,0.0537,0.0623,-0.0086
+119,Ammonia un-ionised as N,mg L⁻¹,0.0013,0.0008,0.0005
+162,Alkalinity to pH 4.5 as CaCO3,mg L⁻¹,169.0,148.7,20.3
+180,"Orthophosphate, reactive as P",mg L⁻¹,2.93,3.087,-0.157
+61,pH,pH units,8.1,7.729,0.371
+76,Temperature of Water,°C,12.7,11.74,0.96
+77,Conductivity at 25 C,µS cm⁻¹,882.5,860.4,22.1
+9901,"Oxygen, Dissolved, % Saturation",%,94.85,86.77,8.08
+9924,"Oxygen, Dissolved as O2",mg L⁻¹,9.98,9.377,0.603

@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software or the derived results, please cite the manuscript below."
+title: "Water-quality UMAP reproducibility package"
+abstract: >-
+  Reproducibility package for Machine-learning-derived chemical signatures for network-scale river monitoring: 
+  A case study of England's routine water-quality archive: preprocessing, the 12-feature /
+  8,857-site analytical matrix, the retained UMAP embedding, direct and hybrid
+  peer retrieval, systematic benchmarking, robustness analyses, and the UMAP
+  hyperparameter sweep.
+authors:
+  - family-names: Sohail
+    given-names: Syed
+  - family-names: Chen
+    given-names: Daqing
+version: 1.0.0
+date-released: 2026-07-25
+license: MIT
+keywords:
+  - water quality
+  - UMAP
+  - dimensionality reduction
+  - river monitoring
+  - Environment Agency
+  - reproducibility
+preferred-citation:
+  type: article
+  title: >-
+    Machine-learning-derived chemical signatures for network-scale river monitoring: A case study of England's routine water-quality archive
+  authors:
+    - family-names: Sohail
+      given-names: Syed
+    - family-names: Chen
+      given-names: Daqing
+  journal: "Water Research"
+  year: 2026
+  notes: "Under review."

@@ -1,0 +1,13 @@
+determinant_code,unit,authoritative_name,manuscript_label,manuscript_label_with_unit,source_provenance
+111,MILLIGRAM PER LITRE,Ammoniacal Nitrogen as N,Ammoniacal N,Ammoniacal N (mg/L),site_det_stats_2015_2024.parquet + observations_stitched_skip2014.parquet (agree)
+116,MILLIGRAM PER LITRE,"Nitrogen, Total Oxidised as N",Total Oxidised N,Total Oxidised N (mg/L),site_det_stats_2015_2024.parquet + observations_stitched_skip2014.parquet (agree)
+117,MILLIGRAM PER LITRE,Nitrate as N,Nitrate as N,Nitrate as N (mg/L),site_det_stats_2015_2024.parquet + observations_stitched_skip2014.parquet (agree)
+118,MILLIGRAM PER LITRE,Nitrite as N,Nitrite as N,Nitrite as N (mg/L),site_det_stats_2015_2024.parquet + observations_stitched_skip2014.parquet (agree)
+119,MILLIGRAM PER LITRE,Ammonia un-ionised as N,Un-ionised Ammonia,Un-ionised Ammonia (mg/L),site_det_stats_2015_2024.parquet + observations_stitched_skip2014.parquet (agree)
+162,MILLIGRAM PER LITRE,Alkalinity to pH 4.5 as CaCO3,Alkalinity,Alkalinity (mg/L),site_det_stats_2015_2024.parquet + observations_stitched_skip2014.parquet (agree)
+180,MILLIGRAM PER LITRE,"Orthophosphate, reactive as P",Orthophosphate,Orthophosphate (mg/L),site_det_stats_2015_2024.parquet + observations_stitched_skip2014.parquet (agree)
+61,PH UNITS,pH,pH,pH (pH units),site_det_stats_2015_2024.parquet + observations_stitched_skip2014.parquet (agree)
+76,CELSIUS,Temperature of Water,Water Temperature,Water Temperature (deg C),site_det_stats_2015_2024.parquet + observations_stitched_skip2014.parquet (agree)
+77,MICROSIEMENS PER CENTIMETRE,Conductivity at 25 C,Conductivity,Conductivity (uS/cm),site_det_stats_2015_2024.parquet + observations_stitched_skip2014.parquet (agree)
+9901,PERCENTAGE,"Oxygen, Dissolved, % Saturation",DO % Saturation,DO % Saturation (%),site_det_stats_2015_2024.parquet + observations_stitched_skip2014.parquet (agree)
+9924,MILLIGRAM PER LITRE,"Oxygen, Dissolved as O2",DO concentration,DO concentration (mg/L),site_det_stats_2015_2024.parquet + observations_stitched_skip2014.parquet (agree)

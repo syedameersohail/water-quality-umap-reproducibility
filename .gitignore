@@ -1,0 +1,32 @@
+# --- Raw / large data (not redistributed; see data/README.md) ---------------
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+*.parquet
+!data/processed/*.parquet          # small processed embeddings are tracked
+
+# --- Generated bulk outputs -------------------------------------------------
+outputs/sweep/
+outputs/robustness/
+outputs/**/_smoke*/
+outputs/**/*.log
+
+# --- Caches / environments --------------------------------------------------
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.env
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# --- OS / editor ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*~
+*.stackdump

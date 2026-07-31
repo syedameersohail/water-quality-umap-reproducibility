@@ -1,0 +1,3 @@
+method,best_axis_pairing,abs_rho_latitude,abs_rho_longitude,pairing_score
+UMAP,"x->lon, y->lat",0.273,0.532,0.804
+t-SNE,"x->lon, y->lat",0.214,0.513,0.727

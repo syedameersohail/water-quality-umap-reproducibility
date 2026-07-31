@@ -1,0 +1,7 @@
+code,determinand,short,unit,mineral_enriched_5pct,middle90,low_mineral_5pct,fold_contrast,n_obs_mineral,n_obs_middle,n_obs_low
+116,"Nitrogen, Total Oxidised as N",Total Oxidised N,mg L-1,14.5,3.935,0.31,46.8,443,7971,443
+117,Nitrate as N,Nitrate as N,mg L-1,14.4,3.9225,0.315,45.7,438,7834,413
+77,Conductivity at 25 C,Conductivity,uS cm-1,892.0,602.0,74.0,12.1,430,7909,440
+162,Alkalinity to pH 4.5 as CaCO3,Alkalinity,mg L-1,190.0,182.0,13.0,14.6,436,7881,397
+180,"Orthophosphate, reactive as P",Orthophosphate,mg L-1,0.51,0.073,0.005,102.0,443,7958,442
+118,Nitrite as N,Nitrite as N,mg L-1,0.0586,0.018,0.002,29.3,442,7956,443

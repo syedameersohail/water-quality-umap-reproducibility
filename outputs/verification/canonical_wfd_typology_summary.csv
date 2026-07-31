@@ -1,0 +1,4 @@
+method,focal_with_typology,peer_slots,peers_with_typology,coverage_pct,mean_agreement_available,mean_agreement_all5,n_contributing,measure_note,provenance
+12D_reference,96,480,465,96.9,0.463,0.444,96,"agreement_available = macro-average of focal-site (matches / peers-with-known-typology); agreement_all5 = matches/5",TASK_B_REPORT_revised.md (approved V2)
+UMAP_direct,96,480,474,98.8,0.411,0.404,96,"agreement_available = macro-average of focal-site (matches / peers-with-known-typology); agreement_all5 = matches/5",TASK_B_REPORT_revised.md (approved V2)
+hybrid,96,480,467,97.3,0.458,0.444,96,"agreement_available = macro-average of focal-site (matches / peers-with-known-typology); agreement_all5 = matches/5",TASK_B_REPORT_revised.md (approved V2)

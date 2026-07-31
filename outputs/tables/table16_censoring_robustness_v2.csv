@@ -1,0 +1,4 @@
+comparison,n_features,procrustes_disparity,median_knn_overlap_k6
+"Reference embedding (12 features, seed 42)",12,0.0,1.0
+Drop two most censored (Ammoniacal Nitrogen as N+Ammonia un-ionised as N),10,0.0091,0.5
+"Stochastic baseline (12 features, different seed)",12,0.0036,0.5

@@ -1,0 +1,153 @@
+# =============================================================================
+# analysis_config.yaml
+# Central configuration for the water-quality UMAP reproducibility pipeline.
+#
+# Every scientific choice reported in the manuscript (thresholds, feature panel,
+# UMAP parameters, seeds, sweep grid) is defined here. Scripts read this file
+#
+# All paths are RELATIVE to the repository root (the folder that contains this
+# `config/` directory). They are resolved to absolute paths at runtime by
+# `src/waterqual/config.py`. Do not put machine-specific absolute paths here.
+# =============================================================================
+
+project:
+  name: water-quality-umap-reproducibility
+  manuscript: >-
+    Syed Sohail & Daqing Chen (2026). Machine-learning-derived chemical signatures 
+    for network-scale river monitoring: A case study of England's routine water-quality archive
+  study_period: "2015-2024"
+  random_state: 42          # canonical seed for the retained embedding & sampling
+
+# -----------------------------------------------------------------------------
+# Paths (relative to repo root). Output directories are created automatically.
+# -----------------------------------------------------------------------------
+paths:
+  data_raw: data/raw
+  data_interim: data/interim
+  data_processed: data/processed
+  data_reference: data/reference
+  outputs: outputs
+  outputs_figures: outputs/figures
+  outputs_tables: outputs/tables
+  outputs_verification: outputs/verification
+
+  # Raw inputs (large; NOT redistributed — see data/README.md for acquisition).
+  site_det_stats: data/raw/site_det_stats_2015_2024.parquet
+  observations: data/raw/observations_stitched_skip2014.parquet
+
+  # Reference lookups (small; redistributable Environment Agency open data).
+  wfd_typology_lookup: data/reference/site_wfd_typology_lookup.csv
+  feature_mapping: data/reference/authoritative_feature_mapping.csv
+  clean_basins: data/reference/clean_basins.csv
+
+  # Processed analytical artifacts (small; provided for convenience/verification
+  # and regenerable by scripts/02_build_matrix.py + scripts/03_fit_embeddings.py).
+  matrix_scaled: data/processed/feature_matrix_8857x12_scaled.csv
+  matrix_pre_imputation: data/processed/feature_matrix_8857x12_pre_imputation.csv
+  matrix_imputed_unscaled: data/processed/feature_matrix_8857x12_imputed_unscaled.csv
+  feature_metadata: data/processed/v2_feature_metadata.csv
+  site_exclusion_audit: data/processed/site_exclusion_audit.csv
+  umap_embedding: data/processed/umap_v2.csv
+
+# -----------------------------------------------------------------------------
+# Feature selection / preprocessing (Task A)
+# "Observed feature" = a non-null site-level median in site_det_stats for a
+# determinand, regardless of observation count n. The n_min filter applies only
+# to NATIONAL feature screening, not to the site-level completeness check.
+# -----------------------------------------------------------------------------
+preprocessing:
+  n_min: 30                 # min observations for a det. to count toward national screening
+  n_sites_min: 200          # min nationally-supported sites for a det. to be a candidate
+  coverage_threshold: 0.60  # retain features present at >= 60% of pivot sites
+  min_observed_features: 9  # a site is eligible with >= 9 of 12 observed (<= 3 missing)
+  imputation: median        # median imputation, computed on the eligible population only
+  scaler: standard          # sklearn StandardScaler(with_mean=True, with_std=True)
+  expected_n_sites: 8857    # eligible sites after completeness filter (assertion)
+  expected_n_features: 12   # retained determinand features (assertion)
+
+# The 12 retained features, in canonical matrix column order (determinand code).
+# Identity is code x unit x name; see data/reference/authoritative_feature_mapping.csv.
+features:
+  order: ["111", "116", "117", "118", "119", "162", "180", "61", "76", "77", "9901", "9924"]
+  labels:
+    "111":  {unit: MILLIGRAM PER LITRE,            name: "Ammoniacal Nitrogen as N",        short: "Ammoniacal N"}
+    "116":  {unit: MILLIGRAM PER LITRE,            name: "Nitrogen, Total Oxidised as N",   short: "Total Oxidised N"}
+    "117":  {unit: MILLIGRAM PER LITRE,            name: "Nitrate as N",                     short: "Nitrate as N"}
+    "118":  {unit: MILLIGRAM PER LITRE,            name: "Nitrite as N",                     short: "Nitrite as N"}
+    "119":  {unit: MILLIGRAM PER LITRE,            name: "Ammonia un-ionised as N",          short: "Un-ionised Ammonia"}
+    "162":  {unit: MILLIGRAM PER LITRE,            name: "Alkalinity to pH 4.5 as CaCO3",    short: "Alkalinity"}
+    "180":  {unit: MILLIGRAM PER LITRE,            name: "Orthophosphate, reactive as P",    short: "Orthophosphate"}
+    "61":   {unit: PH UNITS,                       name: "pH",                               short: "pH"}
+    "76":   {unit: CELSIUS,                        name: "Temperature of Water",             short: "Water Temperature"}
+    "77":   {unit: MICROSIEMENS PER CENTIMETRE,    name: "Conductivity at 25 C",             short: "Conductivity"}
+    "9901": {unit: PERCENTAGE,                     name: "Oxygen, Dissolved, % Saturation",  short: "DO % Saturation"}
+    "9924": {unit: MILLIGRAM PER LITRE,            name: "Oxygen, Dissolved as O2",          short: "DO concentration"}
+
+# -----------------------------------------------------------------------------
+# Retained UMAP configuration (Task B / national embedding, Figure 4)
+# This is the single embedding displayed and used for direct/hybrid retrieval.
+# -----------------------------------------------------------------------------
+umap:
+  n_components: 2
+  n_neighbors: 50
+  min_dist: 0.10
+  metric: euclidean
+  random_state: 42
+  n_jobs: 1                 # required for deterministic seeded UMAP
+
+# Other embeddings fitted for comparison (Task B Part 1).
+other_embeddings:
+  pca:  {n_components: 2, random_state: 42}
+  tsne: {n_components: 2, perplexity: 30, max_iter: 1500, init: pca, learning_rate: auto, random_state: 42}
+
+# -----------------------------------------------------------------------------
+# Peer retrieval & systematic benchmarking (Task B Parts 2-3)
+# -----------------------------------------------------------------------------
+peer_retrieval:
+  k_peers: 5                # size of each peer set (Overlap@5)
+  umap_shortlist: 20        # UMAP candidate shortlist size for the hybrid method
+  n_focal_sites: 100        # random focal sites for systematic benchmarking
+  focal_seed: 42            # numpy seed used to draw the 100 focal sites
+  illustrative_focal_site: "MD-48883750"   # Saffron Brook (illustrative example)
+  wfd_typology_column: water_body_typology
+
+# -----------------------------------------------------------------------------
+# UMAP hyperparameter sweep (Task C) — 5 x 4 x 10 = 200 fits
+# -----------------------------------------------------------------------------
+sweep:
+  n_neighbors: [15, 30, 50, 100, 150]
+  min_dist: [0.01, 0.10, 0.25, 0.50]
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  metric: euclidean
+  n_components: 2
+  n_jobs: 1
+  trustworthiness_k: [10, 50]     # k values for trustworthiness metric
+  knn_recall_k: 10
+  output_dir: outputs/sweep       # checkpoints + summaries written here
+  smoke_test:                     # single-fit configuration for --smoke-test
+    n_neighbors: [50]
+    min_dist: [0.10]
+    seeds: [42]
+
+# -----------------------------------------------------------------------------
+# Robustness analyses (Task D)
+# -----------------------------------------------------------------------------
+robustness:
+  subsampling:
+    fraction: 0.80
+    n_replicates: 100
+    k_neighbours: 10
+    output_dir: outputs/robustness/subsampling
+  lofo:                            # leave-one-feature-out (12 fits)
+    k_neighbours: 10
+    output_dir: outputs/robustness/lofo
+
+# -----------------------------------------------------------------------------
+# Threshold sensitivity (Task E / manuscript Tables 14, 15, 18)
+# -----------------------------------------------------------------------------
+sensitivity:
+  coverage_thresholds_tau: [0.50, 0.55, 0.60, 0.65, 0.70]   # Table 14 (feature-coverage tau)
+  support_grid:                                             # Table 18 (national support)
+    n_min: [20, 30, 40, 50]
+    n_sites_min: [100, 150, 200, 250, 300]
+  river_material: "RIVER / RUNNING SURFACE WATER"           # Table 15 censoring filter

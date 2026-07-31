@@ -1,0 +1,23 @@
+# Core scientific dependencies for the water-quality UMAP reproducibility pipeline.
+# Supported Python: 3.10 - 3.11.
+#
+# Versions are pinned to the canonical analysis environment (Task E / embeddings).
+# IMPORTANT: keep numpy < 2. umap-learn / numba in this stack are not compatible
+# with numpy 2.x in the reference Anaconda environment.
+#
+# Install:  pip install -r requirements.txt
+
+numpy==1.26.4
+pandas==2.3.3
+scipy==1.13.1
+scikit-learn==1.6.1
+umap-learn==0.5.12
+polars==1.35.2
+pyarrow==17.0.0
+matplotlib==3.10.7
+seaborn==0.13.2
+PyYAML==6.0.2
+
+# Transitive but pinned for determinism of the UMAP nearest-neighbour graph:
+numba==0.60.0
+pynndescent==0.5.13

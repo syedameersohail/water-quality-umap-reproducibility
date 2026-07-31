@@ -1,0 +1,4 @@
+method,peer_site_ids,overlap_with_12d_ref,overlap_pct,median_12d_distance,mean_12d_distance,chem_distance_ratio,wfd_exact_matches,wfd_peers_with_typology,wfd_agreement_available,focal_typology
+12D_reference,SO-E0000909; MD-46986050; NE-49301910; NW-88003076; AN-RH0201,5,100.0,2.0530456137161224,2.1950131469341185,1.0,3,5,0.6,"Low, Small, Calcareous"
+UMAP_direct,NE-49301910; AN-RH0201; MD-46986050; TH-PCHR0160; SO-E0001746,3,60.0,2.6604000720849412,2.633655771854521,1.1998359898359041,2,5,0.4,"Low, Small, Calcareous"
+hybrid,SO-E0000909; MD-46986050; NE-49301910; NW-88003076; AN-RH0201,5,100.0,2.0530456137161224,2.195013146934119,1.0000000000000002,3,5,0.6,"Low, Small, Calcareous"
