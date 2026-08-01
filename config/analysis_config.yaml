@@ -146,7 +146,7 @@ robustness:
 # Threshold sensitivity (Task E / manuscript Tables 14, 15, 18)
 # -----------------------------------------------------------------------------
 sensitivity:
-  coverage_thresholds_tau: [0.50, 0.55, 0.60, 0.65, 0.70]   # Table 14 (feature-coverage tau)
+  coverage_thresholds_tau: [0.40, 0.50, 0.60, 0.70, 0.80]   # Table 14 (feature-coverage tau)
   support_grid:                                             # Table 18 (national support)
     n_min: [20, 30, 40, 50]
     n_sites_min: [100, 150, 200, 250, 300]
